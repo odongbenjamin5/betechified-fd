@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Student Portal</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav{
+      background:#1e3a8a;
+      padding:15px 20px;
+      position:relative;
+    }
+
+    .logo{
+      color:rgb(167, 26, 26);
+      font-size:24px;
+      font-weight:bold;
+    }
+
+    /* Hide checkbox */
+    #menu-toggle{
+      display:none;
+    }
+
+    /* Menu Icon */
+    .menu-icon{
+      font-size:32px;
+      color:rgb(253, 248, 248);
+      cursor:pointer;
+      position:absolute;
+      top:10px;
+      right:20px;
+      display:block;
+      transition:0.3s;
+    }
+
+    .menu-icon:hover{
+      transform:scale(1.1);
+    }
+
+    /* Navigation Links */
+    .navbar{
+      list-style:none;
+      display:none;
+      flex-direction:column;
+      margin-top:20px;
+      background:#41507c;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    /* Show navbar when menu icon is clicked */
+    #menu-toggle:checked ~ .navbar{
+      display:flex;
+    }
+
+    .navbar li{
+      position:relative;
+    }
+
+    .navbar li a{
+      display:block;
+      color:white;
+      text-decoration:none;
+      padding:15px;
+      transition:0.3s;
+    }
+
+    .navbar li a:hover{
+      background:#706fc4;
+      padding-left:25px;
+    }
+
+    /* ================= DROPDOWN ================= */
+
+    .dropdown-content{
+      display:none;
+      background:white;
+    }
+
+    .dropdown-content a{
+      color:black !important;
+      padding:12px;
+    }
+
+    .dropdown-content a:hover{
+      background:#ddd;
+    }
+
+    /* Hover dropdown */
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
+
+    /* ================= HERO SECTION ================= */
+
+    .hero{
+      background:white;
+      margin:20px;
+      padding:40px;
+      border-radius:10px;
+      text-align:center;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .hero h1{
+      color:#14054b;
+      margin-bottom:10px;
+    }
+
+    .hero p{
+      color:#444;
+    }
+
+    /* = TABLE = */
+
+    .table-container{
+      width:90%;
+      margin:20px auto;
+      overflow-x:auto;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:white;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    table th{
+      background:#1e3a8a;
+      color:white;
+      padding:15px;
+    }
+
+    table td{
+      padding:12px;
+      border-bottom:1px solid #ddd;
+      text-align:center;
+    }
+
+    table tr:hover{
+      background:#f1f5ff;
+      transition:0.3s;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#6f298d;
+      color:white;
+      text-align:center;
+      padding:15px;
+      margin-top:30px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+
+  <nav>
+
+    <div class="logo">
+      Student Portal
+    </div>
+
+    <!-- Hidden checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Menu icon -->
+    <label for="menu-toggle" class="menu-icon">
+      ☰
+    </label>
+
+    <!-- Navigation Links -->
+    <ul class="navbar">
+
+      <li>
+        <a href="#">Home</a>
+      </li>
+
+      <li>
+        <a href="#">About</a>
+      </li>
+
+      <li class="dropdown">
+
+        <a href="#">
+          Contact Us ▼
+        </a>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown-content">
+          <a href="#">Email</a>
+          <a href="#">Phone</a>
+          <a href="#">Support</a>
+        </div>
+
+      </li>
+
+    </ul>
+
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+
+  <section class="hero">
+
+    <h1>Welcome to Student Portal</h1>
+
+    <p>
+      This homepage contains a collapsible navigation menu,
+      dropdown links, and a student information table.
+    </p>
+
+  </section>
+
+  <!-- ================= STUDENTS TABLE ================= -->
+
+  <div class="table-container">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Class</th>
+          <th>Student Grade</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>John Doe</td>
+          <td>Senior 4</td>
+          <td>A</td>
+        </tr>
+
+        <tr>
+          <td>Sarah Smith</td>
+          <td>Senior 3</td>
+          <td>B+</td>
+        </tr>
+
+        <tr>
+          <td>Michael Brown</td>
+          <td>Senior 2</td>
+          <td>A-</td>
+        </tr>
+
+        <tr>
+          <td>Grace Johnson</td>
+          <td>Senior 1</td>
+          <td>B</td>
+        </tr>
+
+        <tr>
+          <td>David Wilson</td>
+          <td>Senior 6</td>
+          <td>A+</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+    <p>&copy; 2026 Student Portal. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
